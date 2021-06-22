@@ -16,7 +16,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         vehicleViewModal.viewController = self
         vehicleViewModal.getAllVehicles()
-        tableView.separatorColor = .white
         tableView.register(UINib(nibName: "VehicleCell", bundle: nil), forCellReuseIdentifier: "VehicleCell")
     }
 }

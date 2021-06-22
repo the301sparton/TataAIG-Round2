@@ -54,7 +54,20 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbI-6p-Mu5">
                                 <rect key="frame" x="0.0" y="140" width="414" height="722"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FcA-mc-gU7">
+                                        <rect key="frame" x="10" y="572" width="394" height="150"/>
+                                        <color key="backgroundColor" red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="0.39875056467899661" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="yHy-Ox-1dX"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FcA-mc-gU7" secondAttribute="trailing" constant="10" id="jsc-RW-cjD"/>
+                                    <constraint firstItem="FcA-mc-gU7" firstAttribute="leading" secondItem="zbI-6p-Mu5" secondAttribute="leading" constant="10" id="lKg-bu-Q3U"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OIN-qG-NFG"/>
@@ -64,10 +77,12 @@
                             <constraint firstItem="OIN-qG-NFG" firstAttribute="trailing" secondItem="zbI-6p-Mu5" secondAttribute="trailing" id="ggF-YQ-fZG"/>
                             <constraint firstItem="zbI-6p-Mu5" firstAttribute="leading" secondItem="OIN-qG-NFG" secondAttribute="leading" id="nAQ-E3-uMW"/>
                             <constraint firstItem="OIN-qG-NFG" firstAttribute="bottom" secondItem="zbI-6p-Mu5" secondAttribute="bottom" id="pfw-by-rKI"/>
+                            <constraint firstItem="OIN-qG-NFG" firstAttribute="bottom" secondItem="FcA-mc-gU7" secondAttribute="bottom" id="vrP-Rw-A05" customClass="Round"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Google Map " id="8Kh-P4-4z8"/>
                     <connections>
+                        <outlet property="bottomDetailView" destination="FcA-mc-gU7" id="wkc-pG-zKl"/>
                         <outlet property="mapHolder" destination="zbI-6p-Mu5" id="cBj-6v-fpO"/>
                     </connections>
                 </viewController>
@@ -83,9 +98,16 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="sdw-Ax-Fdm">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="systemPinkColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -165,8 +187,8 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

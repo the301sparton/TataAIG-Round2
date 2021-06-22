@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,10 @@
 		A831C9502681DFCE003D2E06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A831C94E2681DFCE003D2E06 /* LaunchScreen.storyboard */; };
 		A831C95B2681DFCE003D2E06 /* TataAIGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831C95A2681DFCE003D2E06 /* TataAIGTests.swift */; };
 		A831C9662681DFCE003D2E06 /* TataAIGUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831C9652681DFCE003D2E06 /* TataAIGUITests.swift */; };
+		A831C9752681E8F4003D2E06 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A831C9742681E8F4003D2E06 /* Alamofire */; };
+		A831C9822681EB1D003D2E06 /* VehicleArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831C97F2681EB1D003D2E06 /* VehicleArray.swift */; };
+		A831C9832681EB1D003D2E06 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831C9802681EB1D003D2E06 /* Vehicle.swift */; };
+		A831C9842681EB1D003D2E06 /* VehicleCoordicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831C9812681EB1D003D2E06 /* VehicleCoordicate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,9 @@
 		A831C9612681DFCE003D2E06 /* TataAIGUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TataAIGUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A831C9652681DFCE003D2E06 /* TataAIGUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TataAIGUITests.swift; sourceTree = "<group>"; };
 		A831C9672681DFCE003D2E06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A831C97F2681EB1D003D2E06 /* VehicleArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleArray.swift; sourceTree = "<group>"; };
+		A831C9802681EB1D003D2E06 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		A831C9812681EB1D003D2E06 /* VehicleCoordicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleCoordicate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A831C9752681E8F4003D2E06 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +107,9 @@
 		A831C9422681DFCB003D2E06 /* TataAIG */ = {
 			isa = PBXGroup;
 			children = (
+				A831C9782681E941003D2E06 /* View */,
+				A831C9762681E904003D2E06 /* Model */,
+				A831C9772681E913003D2E06 /* ViewModel */,
 				A831C9432681DFCB003D2E06 /* AppDelegate.swift */,
 				A831C9452681DFCB003D2E06 /* SceneDelegate.swift */,
 				A831C9472681DFCB003D2E06 /* ViewController.swift */,
@@ -128,6 +139,30 @@
 			path = TataAIGUITests;
 			sourceTree = "<group>";
 		};
+		A831C9762681E904003D2E06 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A831C9802681EB1D003D2E06 /* Vehicle.swift */,
+				A831C97F2681EB1D003D2E06 /* VehicleArray.swift */,
+				A831C9812681EB1D003D2E06 /* VehicleCoordicate.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A831C9772681E913003D2E06 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A831C9782681E941003D2E06 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +179,9 @@
 			dependencies = (
 			);
 			name = TataAIG;
+			packageProductDependencies = (
+				A831C9742681E8F4003D2E06 /* Alamofire */,
+			);
 			productName = TataAIG;
 			productReference = A831C9402681DFCB003D2E06 /* TataAIG.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +253,9 @@
 				Base,
 			);
 			mainGroup = A831C9372681DFCB003D2E06;
+			packageReferences = (
+				A831C9732681E8F4003D2E06 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = A831C9412681DFCB003D2E06 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,8 +299,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A831C9822681EB1D003D2E06 /* VehicleArray.swift in Sources */,
 				A831C9482681DFCB003D2E06 /* ViewController.swift in Sources */,
 				A831C9442681DFCB003D2E06 /* AppDelegate.swift in Sources */,
+				A831C9842681EB1D003D2E06 /* VehicleCoordicate.swift in Sources */,
+				A831C9832681EB1D003D2E06 /* Vehicle.swift in Sources */,
 				A831C9462681DFCB003D2E06 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,6 +631,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A831C9732681E8F4003D2E06 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A831C9742681E8F4003D2E06 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A831C9732681E8F4003D2E06 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A831C9382681DFCB003D2E06 /* Project object */;
 }

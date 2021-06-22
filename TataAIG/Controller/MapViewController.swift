@@ -9,6 +9,7 @@ import UIKit
 import GoogleMaps
 class MapViewController: UIViewController {
     
+    @IBOutlet weak var mapHolder: UIView!
     var vehicleArray : VehicleArray? = nil
     var selectedVehicle : Vehicle? = nil
     var mapView : GMSMapView? = nil
@@ -18,7 +19,7 @@ class MapViewController: UIViewController {
         
         let camera = GMSCameraPosition.camera(withLatitude: 19.0760, longitude: 72.8777, zoom: 8)
         mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
-        self.view.addSubview(mapView!)
+        mapHolder.addSubview(mapView!)
         
         
         setAllMarkers()

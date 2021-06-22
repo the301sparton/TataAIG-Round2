@@ -8,17 +8,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Vehicles-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TataAIG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Vehicles" id="BYZ-38-t0r" customClass="ViewController" customModule="TataAIG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZUk-rw-FH8">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <color key="sectionIndexBackgroundColor" red="0.1215686275" green="0.3803921569" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="sSb-Tc-9H7"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="WSj-DZ-cgH"/>
@@ -26,7 +27,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <constraints>
                             <constraint firstItem="ZUk-rw-FH8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4vX-L2-0I3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZUk-rw-FH8" secondAttribute="trailing" id="N2Q-Ky-F03"/>
@@ -34,52 +35,141 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZUk-rw-FH8" secondAttribute="bottom" id="rbO-aE-FTK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="QdZ-8u-DE3"/>
+                    <navigationItem key="navigationItem" title="Vehicle List" id="QdZ-8u-DE3"/>
                     <connections>
                         <outlet property="tableView" destination="ZUk-rw-FH8" id="hCP-uN-zcq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902.89855072463774" y="36.830357142857139"/>
+            <point key="canvasLocation" x="775" y="-265"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Google Map -->
         <scene sceneID="lq5-Nn-AdR">
             <objects>
                 <viewController storyboardIdentifier="mapVC" id="Duj-GB-iEv" customClass="MapViewController" customModule="TataAIG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QQ7-qX-nkf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbI-6p-Mu5">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="OIN-qG-NFG"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <constraints>
+                            <constraint firstItem="zbI-6p-Mu5" firstAttribute="top" secondItem="OIN-qG-NFG" secondAttribute="top" id="drK-I1-Ns8"/>
+                            <constraint firstItem="OIN-qG-NFG" firstAttribute="trailing" secondItem="zbI-6p-Mu5" secondAttribute="trailing" id="ggF-YQ-fZG"/>
+                            <constraint firstItem="zbI-6p-Mu5" firstAttribute="leading" secondItem="OIN-qG-NFG" secondAttribute="leading" id="nAQ-E3-uMW"/>
+                            <constraint firstItem="OIN-qG-NFG" firstAttribute="bottom" secondItem="zbI-6p-Mu5" secondAttribute="bottom" id="pfw-by-rKI"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Google Map " id="8Kh-P4-4z8"/>
+                    <connections>
+                        <outlet property="mapHolder" destination="zbI-6p-Mu5" id="cBj-6v-fpO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdp-Jh-qAT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1732" y="39"/>
+            <point key="canvasLocation" x="748" y="465"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="krh-uw-dxK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pb3-x5-58J" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sdw-Ax-Fdm">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="sdw-Ax-Fdm">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Sb6-A4-fgl"/>
+                        <segue destination="y0i-pL-XNb" kind="relationship" relationship="rootViewController" id="yNu-Kf-czM"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bkh-Cq-4Zd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7.2463768115942031" y="36.830357142857139"/>
+            <point key="canvasLocation" x="-991" y="37"/>
+        </scene>
+        <!--Select Option-->
+        <scene sceneID="zzT-TV-YDj">
+            <objects>
+                <viewController id="y0i-pL-XNb" customClass="MainViewController" customModule="TataAIG" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Ld-iM-B5P">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21G-BE-Hvu">
+                                <rect key="frame" x="82" y="220" width="250" height="250"/>
+                                <color key="backgroundColor" red="0.12156862745098039" green="0.38039215686274508" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="7zH-nV-NxQ"/>
+                                    <constraint firstAttribute="height" constant="250" id="Q9H-Qa-rYO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <state key="normal" title="Vehicle List">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="32L-gl-C2a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4h-cv-J8a">
+                                <rect key="frame" x="82" y="510" width="250" height="250"/>
+                                <color key="backgroundColor" red="0.1803921568627451" green="0.25098039215686274" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="1q0-K1-Wxu"/>
+                                    <constraint firstAttribute="height" constant="250" id="5o8-z0-vl2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <state key="normal" title="Google Map">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Duj-GB-iEv" kind="show" id="tp5-m8-IDB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qjW-75-2ke"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <constraints>
+                            <constraint firstItem="21G-BE-Hvu" firstAttribute="leading" secondItem="qjW-75-2ke" secondAttribute="leading" constant="40" id="9mL-yw-X3h"/>
+                            <constraint firstItem="21G-BE-Hvu" firstAttribute="centerX" secondItem="qjW-75-2ke" secondAttribute="centerX" id="B71-Yg-h4b"/>
+                            <constraint firstItem="S4h-cv-J8a" firstAttribute="top" secondItem="21G-BE-Hvu" secondAttribute="bottom" constant="40" id="I33-su-bLp"/>
+                            <constraint firstItem="S4h-cv-J8a" firstAttribute="centerX" secondItem="21G-BE-Hvu" secondAttribute="centerX" id="Qak-IC-Ow8"/>
+                            <constraint firstItem="qjW-75-2ke" firstAttribute="trailing" secondItem="21G-BE-Hvu" secondAttribute="trailing" constant="40" id="Wrh-Ou-URc"/>
+                            <constraint firstItem="21G-BE-Hvu" firstAttribute="top" secondItem="qjW-75-2ke" secondAttribute="top" constant="80" id="ojh-g4-l8A"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Wrh-Ou-URc"/>
+                                <exclude reference="9mL-yw-X3h"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select Option" id="Ryc-q7-O98"/>
+                    <connections>
+                        <outlet property="googleMapButton" destination="S4h-cv-J8a" id="iWJ-VR-Sda"/>
+                        <outlet property="vehicleListButton" destination="21G-BE-Hvu" id="SxD-50-csh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rn0-ob-0gd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-68" y="37"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

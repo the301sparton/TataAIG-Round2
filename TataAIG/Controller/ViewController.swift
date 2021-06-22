@@ -13,8 +13,9 @@ class ViewController: UIViewController {
     var vehicleViewModal = VehicleViewModel()
     
     override func viewDidLoad() {
-        vehicleViewModal.viewController = self
         super.viewDidLoad()
+        vehicleViewModal.viewController = self
+        self.navigationController?.title = "All Nearby Vehicles"
         vehicleViewModal.getAllVehicles()
         tableView.register(UINib(nibName: "VehicleCell", bundle: nil), forCellReuseIdentifier: "VehicleCell")
     }
@@ -37,6 +38,13 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let mapVC : MapViewController = (Util.storyBoard.instantiateViewController(withIdentifier: "mapVC") as? MapViewController)!
+        mapVC.vehicleArray = vehicleViewModal.vehicalArray
+        mapVC.selectedVehicle = (vehicleViewModal.vehicalArray?.poiList![indexPath.row])!
+        self.navigationController?.pushViewController(mapVC, animated: true)
     }
 
 }

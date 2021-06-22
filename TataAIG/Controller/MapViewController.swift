@@ -15,13 +15,14 @@ class MapViewController: UIViewController {
     var vehicleArray : VehicleArray? = nil
     var selectedVehicle : Vehicle? = nil
     var mapView : GMSMapView? = nil
-    
+    let geocoder = GMSGeocoder()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        GMSServices.provideAPIKey(Util.gmapAPIKey)
         let camera = GMSCameraPosition.camera(withLatitude: 19.0760, longitude: 72.8777, zoom: 8)
         mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
         mapHolder.addSubview(mapView!)
+        mapView?.delegate = self
         
         setAllMarkers()
         if let selectedVehicle = selectedVehicle {
@@ -49,4 +50,20 @@ class MapViewController: UIViewController {
         mapView?.animate(to: camera)
     }
     
+}
+
+extension MapViewController : GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, idleAt cameraPosition: GMSCameraPosition) {
+        geocoder.reverseGeocodeCoordinate(cameraPosition.target) { (response, error) in
+          guard error == nil else {
+            return
+          }
+
+          if let result = response?.firstResult() {
+            let mapCenter = cameraPosition.target
+            print(result)
+            print(mapCenter)
+          }
+        }
+      }
 }

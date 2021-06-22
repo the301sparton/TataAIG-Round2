@@ -3,7 +3,6 @@
 //  TataAIG
 //
 //  Created by Chaitanya Deshpande on 22/06/21.
-
 import Foundation
 struct VehicleArray : Codable {
 	let poiList : [Vehicle]?

@@ -6,8 +6,8 @@
 
 import Foundation
 struct VehicleCoordinate : Codable {
-	let latitude : Double?
-	let longitude : Double?
+	var latitude : Double?
+	var longitude : Double?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -20,5 +20,10 @@ struct VehicleCoordinate : Codable {
 		latitude = try values.decodeIfPresent(Double.self, forKey: .latitude)
 		longitude = try values.decodeIfPresent(Double.self, forKey: .longitude)
 	}
+    
+    init(lat : Double, lon : Double) {
+        self.latitude = lat
+        self.longitude = lon
+    }
 
 }

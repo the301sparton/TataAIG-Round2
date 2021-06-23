@@ -9,13 +9,13 @@ import Foundation
 import UIKit
 
 extension UIView {
-
+    
     enum Visibility {
         case visible
         case invisible
         case gone
     }
-
+    
     var visibility: Visibility {
         get {
             let constraint = (self.constraints.filter{$0.firstAttribute == .height && $0.constant == 0}.first)
@@ -31,10 +31,10 @@ extension UIView {
             }
         }
     }
-
+    
     private func setVisibility(_ visibility: Visibility) {
         let constraint = (self.constraints.filter{$0.firstAttribute == .height && $0.constant == 0}.first)
-
+        
         switch visibility {
         case .visible:
             constraint?.isActive = false

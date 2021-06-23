@@ -35,10 +35,11 @@ class MapViewController: UIViewController {
         toggleVisiblityForLoading(isLoading: true)
         vehicleViewModal.viewController = self
         
-        let camera = GMSCameraPosition.camera(withLatitude: 19.0760, longitude: 72.8777, zoom: 8)
+        let camera = GMSCameraPosition.camera(withLatitude: 19.0760, longitude: 72.8777, zoom: 12)
         mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
-        mapHolder.addSubview(mapView!)
+        mapView?.settings.compassButton = true
         
+        mapHolder.addSubview(mapView!)
         if let selectedVehicle = selectedVehicle {
             zoomToCoordinates(coordinate: selectedVehicle.coordinate!)
         }
@@ -90,17 +91,17 @@ class MapViewController: UIViewController {
 extension MapViewController : GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, idleAt cameraPosition: GMSCameraPosition) {
         geocoder.reverseGeocodeCoordinate(cameraPosition.target) { (response, error) in
-          guard error == nil else {
-            return
-          }
-
-          if let result = response?.firstResult() {
-            let mapCenter : VehicleCoordinate = VehicleCoordinate(lat: cameraPosition.target.latitude, lon: cameraPosition.target.longitude)
-            self.mapCenterLabel.text = "Map Center : " + (result.lines?[0])!
-            self.mapCenterCoordinateLabel.text = "( lat : \(String(describing: mapCenter.latitude!)) lon :  \(String(describing: mapCenter.longitude!)) )"
-            self.toggleVisiblityForLoading(isLoading: true)
-            self.vehicleViewModal.getVehicleForCoordinates(coordinates: mapCenter)
-          }
+            guard error == nil else {
+                return
+            }
+            
+            if let result = response?.firstResult() {
+                let mapCenter : VehicleCoordinate = VehicleCoordinate(lat: cameraPosition.target.latitude, lon: cameraPosition.target.longitude)
+                self.mapCenterLabel.text = "Map Center : " + (result.lines?[0])!
+                self.mapCenterCoordinateLabel.text = "( lat : \(String(describing: mapCenter.latitude!)) lon :  \(String(describing: mapCenter.longitude!)) )"
+                self.toggleVisiblityForLoading(isLoading: true)
+                self.vehicleViewModal.getVehicleForCoordinates(coordinates: mapCenter)
+            }
         }
-      }
+    }
 }

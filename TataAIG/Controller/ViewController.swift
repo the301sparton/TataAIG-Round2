@@ -45,6 +45,6 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
         mapVC.selectedVehicle = (vehicleViewModal.vehicalArray?.poiList![indexPath.row])!
         self.navigationController?.pushViewController(mapVC, animated: true)
     }
-
+    
 }
 

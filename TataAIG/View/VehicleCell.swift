@@ -8,7 +8,7 @@ import Foundation
 import UIKit
 
 class VehicleCell: UITableViewCell {
-
+    
     @IBOutlet weak var labelId: UILabel!
     @IBOutlet weak var labelType: UILabel!
     @IBOutlet weak var vehicleImage: UIImageView!
@@ -20,7 +20,7 @@ class VehicleCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -35,7 +35,7 @@ class VehicleCell: UITableViewCell {
             }
             else {
                 self.imageView?.image = UIImage.init(named: "taxi")
-
+                
             }
         }
     }

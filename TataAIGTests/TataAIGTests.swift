@@ -16,6 +16,7 @@ class TataAIGTests: XCTestCase {
         
         //Act
         viewModel.getVehicleForCoordinates(coordinates: Util.mumbaiPuneCoordinate){(result) in
+           //Assert
             XCTAssertNotNil(result)  // JSON Parse Success
             XCTAssertNotNil(result.poiList) // List Parsed
             XCTAssert(result.poiList!.count > 0) //List Contains Elements

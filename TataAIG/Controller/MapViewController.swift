@@ -26,26 +26,32 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        doUIConfig()
-        setAllMarkers()
-        mapView?.delegate = self
+        
+        vehicleViewModal.viewController = self
+        doUIConfig() // Setup UI
+        setAllMarkers() // Add Markers on GoogleMap
+        mapView?.delegate = self // Set GoogleMapViewDelegate
     }
     
     func doUIConfig() {
+        //Show Loading Label
         toggleVisiblityForLoading(isLoading: true)
-        vehicleViewModal.viewController = self
         
-        let camera = GMSCameraPosition.camera(withLatitude: 19.0760, longitude: 72.8777, zoom: 12)
+        //Google Map UI Setup
+        let camera = GMSCameraPosition.camera(withLatitude: 19.0760, longitude: 72.8777, zoom: 10)
         mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
         mapView?.settings.compassButton = true
-        
         mapHolder.addSubview(mapView!)
-        if let selectedVehicle = selectedVehicle {
-            zoomToCoordinates(coordinate: selectedVehicle.coordinate!)
-        }
+        
+        // PopOver View Setup
         mapHolder.bringSubviewToFront(bottomDetailView)
         bottomDetailView.layer.cornerRadius = 20
         bottomDetailView.clipsToBounds = true
+        
+        //Zoom to selected Item if vehicle is selected in tableView
+        if let selectedVehicle = selectedVehicle {
+            zoomToCoordinates(coordinate: selectedVehicle.coordinate!)
+        }
     }
     
     func setAllMarkers() {
@@ -54,12 +60,16 @@ class MapViewController: UIViewController {
                 let position = CLLocationCoordinate2D(latitude: vehicle.coordinate?.latitude ?? 0, longitude: vehicle.coordinate?.longitude ?? 0)
                 let marker = GMSMarker(position: position)
                 marker.title = "Vehicel Id : \(String(describing: vehicle.id!))"
+                
+                // Add marker icon based on vehicel fleetType
                 if vehicle.fleetType == "POOLING" {
                     marker.icon = UIImage.init(named: "carpool")
                 }
                 else {
                     marker.icon = UIImage.init(named: "taxi")
                 }
+                
+                // Add Rotation to marker based on Heading's Value
                 marker.rotation = CLLocationDegrees(vehicle.heading!)
                 marker.map = mapView
             }
@@ -71,6 +81,8 @@ class MapViewController: UIViewController {
         mapView?.animate(to: camera)
     }
     
+    
+    // -- Toggle Visiblity of Loading Label
     func toggleVisiblityForLoading(isLoading : Bool) {
         if isLoading {
             self.loadingState.visibility = .visible
@@ -88,7 +100,10 @@ class MapViewController: UIViewController {
     
 }
 
+
+//  ---- Subscribe to GMSMapViewDelegate Protocol ----
 extension MapViewController : GMSMapViewDelegate {
+    // Identify scrolling ended event
     func mapView(_ mapView: GMSMapView, idleAt cameraPosition: GMSCameraPosition) {
         geocoder.reverseGeocodeCoordinate(cameraPosition.target) { (response, error) in
             guard error == nil else {

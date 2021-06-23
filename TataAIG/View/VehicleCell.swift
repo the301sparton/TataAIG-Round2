@@ -20,8 +20,6 @@ class VehicleCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
     func setVehicleData(vehicle : Vehicle) {
@@ -30,6 +28,8 @@ class VehicleCell: UITableViewCell {
         }
         if let type = vehicle.fleetType {
             self.labelType.text = "Vehicle Type : " + type
+            
+            // Add Image based on vehicel fleetType
             if type == "POOLING" {
                 self.imageView?.image = UIImage.init(named: "carpool")
             }

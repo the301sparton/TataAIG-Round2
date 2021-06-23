@@ -12,7 +12,7 @@
 		A804A68D26832988001DF395 /* UIViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A804A68C26832988001DF395 /* UIViewExtention.swift */; };
 		A831C9442681DFCB003D2E06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831C9432681DFCB003D2E06 /* AppDelegate.swift */; };
 		A831C9462681DFCB003D2E06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831C9452681DFCB003D2E06 /* SceneDelegate.swift */; };
-		A831C9482681DFCB003D2E06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831C9472681DFCB003D2E06 /* ViewController.swift */; };
+		A831C9482681DFCB003D2E06 /* VehicelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831C9472681DFCB003D2E06 /* VehicelTableViewController.swift */; };
 		A831C94B2681DFCB003D2E06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A831C9492681DFCB003D2E06 /* Main.storyboard */; };
 		A831C94D2681DFCE003D2E06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A831C94C2681DFCE003D2E06 /* Assets.xcassets */; };
 		A831C9502681DFCE003D2E06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A831C94E2681DFCE003D2E06 /* LaunchScreen.storyboard */; };
@@ -58,7 +58,7 @@
 		A831C9402681DFCB003D2E06 /* TataAIG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TataAIG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A831C9432681DFCB003D2E06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A831C9452681DFCB003D2E06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A831C9472681DFCB003D2E06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A831C9472681DFCB003D2E06 /* VehicelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicelTableViewController.swift; sourceTree = "<group>"; };
 		A831C94A2681DFCB003D2E06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A831C94C2681DFCE003D2E06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A831C94F2681DFCE003D2E06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -200,7 +200,7 @@
 		A831C9872681ED60003D2E06 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A831C9472681DFCB003D2E06 /* ViewController.swift */,
+				A831C9472681DFCB003D2E06 /* VehicelTableViewController.swift */,
 				A8C267C426822A2200D6BA22 /* MapViewController.swift */,
 				A804A68826824E0B001DF395 /* MainViewController.swift */,
 			);
@@ -471,7 +471,7 @@
 			files = (
 				A831C9822681EB1D003D2E06 /* VehicleArray.swift in Sources */,
 				A804A68926824E0B001DF395 /* MainViewController.swift in Sources */,
-				A831C9482681DFCB003D2E06 /* ViewController.swift in Sources */,
+				A831C9482681DFCB003D2E06 /* VehicelTableViewController.swift in Sources */,
 				A804A68D26832988001DF395 /* UIViewExtention.swift in Sources */,
 				A831C9862681EC8A003D2E06 /* VehicleViewModel.swift in Sources */,
 				A831C9442681DFCB003D2E06 /* AppDelegate.swift in Sources */,

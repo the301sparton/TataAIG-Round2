@@ -14,6 +14,8 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Do UI Config
         vehicleListButton.layer.cornerRadius = 10
         googleMapButton.layer.cornerRadius = 10
         

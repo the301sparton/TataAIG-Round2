@@ -24,7 +24,7 @@ class VehicleViewModel {
                 if let data = data {
                     do {
                         self.vehicalArray  = try JSONDecoder().decode(VehicleArray.self, from: data)
-                        if let topVC = self.viewController as? ViewController {
+                        if let topVC = self.viewController as? VehicelTableViewController {
                             DispatchQueue.main.async {
                                 topVC.tableView.reloadData()
                             }

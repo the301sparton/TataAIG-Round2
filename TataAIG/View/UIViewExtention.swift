@@ -3,6 +3,7 @@
 //  TataAIG
 //
 //  Created by Chaitanya Deshpande on 23/06/21.
+//  Set Visiblity of views [.visible, .invisible, .gone]
 //
 
 import Foundation

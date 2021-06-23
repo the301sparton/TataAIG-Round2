@@ -41,7 +41,7 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let mapVC : MapViewController = (Util.storyBoard.instantiateViewController(withIdentifier: "mapVC") as? MapViewController)!
-        mapVC.vehicleArray = vehicleViewModal.vehicalArray
+        mapVC.vehicleViewModal = vehicleViewModal
         mapVC.selectedVehicle = (vehicleViewModal.vehicalArray?.poiList![indexPath.row])!
         self.navigationController?.pushViewController(mapVC, animated: true)
     }

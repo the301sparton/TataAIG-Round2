@@ -68,7 +68,7 @@
                                                 <rect key="frame" x="152" y="140" width="90" height="40"/>
                                                 <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="0.74386119198628819" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="90" id="0XR-IK-LQQ"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="0XR-IK-LQQ"/>
                                                     <constraint firstAttribute="height" constant="40" id="Lf6-ob-rcR"/>
                                                 </constraints>
                                                 <state key="normal" title="View List">
@@ -176,7 +176,7 @@
                                 <rect key="frame" x="82" y="220" width="250" height="250"/>
                                 <color key="backgroundColor" red="0.12156862745098039" green="0.38039215686274508" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="7zH-nV-NxQ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="7zH-nV-NxQ"/>
                                     <constraint firstAttribute="height" constant="250" id="Q9H-Qa-rYO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
@@ -191,7 +191,7 @@
                                 <rect key="frame" x="82" y="510" width="250" height="250"/>
                                 <color key="backgroundColor" red="0.1803921568627451" green="0.25098039215686274" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="1q0-K1-Wxu"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="1q0-K1-Wxu"/>
                                     <constraint firstAttribute="height" constant="250" id="5o8-z0-vl2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>

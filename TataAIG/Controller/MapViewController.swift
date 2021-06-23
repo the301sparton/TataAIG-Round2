@@ -19,14 +19,15 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var numVehiclesFoundLabel: UILabel!
     
-    
-    var vehicleArray : VehicleArray? = nil
     var selectedVehicle : Vehicle? = nil
     var mapView : GMSMapView? = nil
     let geocoder = GMSGeocoder()
-
+    var vehicleViewModal = VehicleViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        vehicleViewModal.viewController = self        
         let camera = GMSCameraPosition.camera(withLatitude: 19.0760, longitude: 72.8777, zoom: 8)
         mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
         mapHolder.addSubview(mapView!)
@@ -42,12 +43,19 @@ class MapViewController: UIViewController {
     }
     
     func setAllMarkers() {
-        if let vehicleArray = vehicleArray {
-            for vehicle in vehicleArray.poiList! {
-                let marker = GMSMarker()
-                marker.position = CLLocationCoordinate2D(latitude: (vehicle.coordinate?.latitude)!, longitude: (vehicle.coordinate?.longitude)!)
-                marker.title = "\(vehicle.id ?? 0)"
-                marker.snippet = vehicle.fleetType
+        mapView?.clear()
+        if let vehicelList = vehicleViewModal.vehicalArray?.poiList {
+            for vehicle in vehicelList {
+                let position = CLLocationCoordinate2D(latitude: vehicle.coordinate?.latitude ?? 0, longitude: vehicle.coordinate?.longitude ?? 0)
+                let marker = GMSMarker(position: position)
+                marker.title = "Vehicel Id : \(String(describing: vehicle.id))"
+                if vehicle.fleetType == "POOLING" {
+                    marker.icon = UIImage.init(named: "carpool")
+                }
+                else {
+                    marker.icon = UIImage.init(named: "taxi")
+                }
+                marker.rotation = CLLocationDegrees(vehicle.heading!)
                 marker.map = mapView
             }
         }
@@ -68,9 +76,10 @@ extension MapViewController : GMSMapViewDelegate {
           }
 
           if let result = response?.firstResult() {
-            let mapCenter = cameraPosition.target
+            let mapCenter : VehicleCoordinate = VehicleCoordinate(lat: cameraPosition.target.latitude, lon: cameraPosition.target.longitude)
             self.mapCenterLabel.text = "Map Center : " + (result.lines?[0])!
-            self.mapCenterCoordinateLabel.text = "( lat : \(mapCenter.latitude) lon :  \(mapCenter.longitude) )"
+            self.mapCenterCoordinateLabel.text = "( lat : \(String(describing: mapCenter.latitude)) lon :  \(String(describing: mapCenter.longitude)) )"
+            self.vehicleViewModal.getVehicleForCoordinates(coordinates: mapCenter)
           }
         }
       }

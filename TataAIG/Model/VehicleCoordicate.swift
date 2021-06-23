@@ -6,8 +6,8 @@
 
 import Foundation
 struct VehicleCoordinate : Codable {
-	var latitude : Double?
-	var longitude : Double?
+	let latitude : Double?
+	let longitude : Double?
 
 	enum CodingKeys: String, CodingKey {
 

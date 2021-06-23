@@ -12,11 +12,13 @@ class VehicleViewModel {
     weak var viewController : UIViewController?
     
     func getVehiclesInMumbaiPune() {
-        let coordinate = VehicleCoordinate(lat: 18.5204, lon: 73.8567)
-        getVehicleForCoordinates(coordinates: coordinate)
+        
+        getVehicleForCoordinates(coordinates: Util.mumbaiPuneCoordinate){
+            (result) in
+        }
     }
     
-    func getVehicleForCoordinates(coordinates : VehicleCoordinate) {
+    func getVehicleForCoordinates(coordinates : VehicleCoordinate, completion:@escaping (VehicleArray) -> Void) {
         let url = Util.baseUrl + "p2Lat=\(String(describing: coordinates.latitude!))&p2Lon=\(String(describing: coordinates.longitude!))"
         URLSession.shared.dataTask(with: URL(string: url)!){
             (data, res, error) in
@@ -36,10 +38,10 @@ class VehicleViewModel {
                                 topVC.setAllMarkers()
                             }
                         }
-                        
+                        completion(self.vehicalArray!)
                     }
                     catch {
-                        print(error)
+                        print(error.localizedDescription)
                     }
                 }
             }

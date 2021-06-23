@@ -115,7 +115,9 @@ extension MapViewController : GMSMapViewDelegate {
                 self.mapCenterLabel.text = "Map Center : " + (result.lines?[0])!
                 self.mapCenterCoordinateLabel.text = "( lat : \(String(describing: mapCenter.latitude!)) lon :  \(String(describing: mapCenter.longitude!)) )"
                 self.toggleVisiblityForLoading(isLoading: true)
-                self.vehicleViewModal.getVehicleForCoordinates(coordinates: mapCenter)
+                self.vehicleViewModal.getVehicleForCoordinates(coordinates: mapCenter){
+                    (result) in
+                }
             }
         }
     }

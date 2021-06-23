@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         vehicleViewModal.viewController = self
-        vehicleViewModal.getAllVehicles()
+        vehicleViewModal.getVehiclesInMumbaiPune()
         tableView.register(UINib(nibName: "VehicleCell", bundle: nil), forCellReuseIdentifier: "VehicleCell")
     }
 }

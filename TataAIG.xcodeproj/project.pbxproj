@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		683A0069EC7A23C30606FA04 /* libPods-TataAIG-TataAIGUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 124E171F00272C92A8CE6EF2 /* libPods-TataAIG-TataAIGUITests.a */; };
 		A804A68926824E0B001DF395 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A804A68826824E0B001DF395 /* MainViewController.swift */; };
+		A804A68D26832988001DF395 /* UIViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A804A68C26832988001DF395 /* UIViewExtention.swift */; };
 		A831C9442681DFCB003D2E06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831C9432681DFCB003D2E06 /* AppDelegate.swift */; };
 		A831C9462681DFCB003D2E06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831C9452681DFCB003D2E06 /* SceneDelegate.swift */; };
 		A831C9482681DFCB003D2E06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831C9472681DFCB003D2E06 /* ViewController.swift */; };
@@ -53,6 +54,7 @@
 		313DBAB4DC7F2758D5365752 /* Pods-TataAIG-TataAIGUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TataAIG-TataAIGUITests.debug.xcconfig"; path = "Target Support Files/Pods-TataAIG-TataAIGUITests/Pods-TataAIG-TataAIGUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9ADFD39925B89CDF8F0E826E /* Pods-TataAIGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TataAIGTests.release.xcconfig"; path = "Target Support Files/Pods-TataAIGTests/Pods-TataAIGTests.release.xcconfig"; sourceTree = "<group>"; };
 		A804A68826824E0B001DF395 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A804A68C26832988001DF395 /* UIViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtention.swift; sourceTree = "<group>"; };
 		A831C9402681DFCB003D2E06 /* TataAIG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TataAIG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A831C9432681DFCB003D2E06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A831C9452681DFCB003D2E06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			children = (
 				A8C267C02681F4D200D6BA22 /* VehicleCell.swift */,
 				A8C267C12681F4D200D6BA22 /* VehicleCell.xib */,
+				A804A68C26832988001DF395 /* UIViewExtention.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				A831C9822681EB1D003D2E06 /* VehicleArray.swift in Sources */,
 				A804A68926824E0B001DF395 /* MainViewController.swift in Sources */,
 				A831C9482681DFCB003D2E06 /* ViewController.swift in Sources */,
+				A804A68D26832988001DF395 /* UIViewExtention.swift in Sources */,
 				A831C9862681EC8A003D2E06 /* VehicleViewModel.swift in Sources */,
 				A831C9442681DFCB003D2E06 /* AppDelegate.swift in Sources */,
 				A8C267C526822A2300D6BA22 /* MapViewController.swift in Sources */,

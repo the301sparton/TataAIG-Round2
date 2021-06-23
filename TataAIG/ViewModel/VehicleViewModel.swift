@@ -11,7 +11,7 @@ class VehicleViewModel {
     var vehicalArray : VehicleArray?
     weak var viewController : UIViewController?
     
-    func getAllVehicles() {
+    func getVehiclesInMumbaiPune() {
         let coordinate = VehicleCoordinate(lat: 18.5204, lon: 73.8567)
         getVehicleForCoordinates(coordinates: coordinate)
     }
@@ -32,7 +32,7 @@ class VehicleViewModel {
                         
                         if let topVC = self.viewController as? MapViewController {
                             DispatchQueue.main.async {
-                                topVC.numVehiclesFoundLabel.text = "Found \(String(describing: self.vehicalArray!.poiList!.count)) Vehicles"
+                                topVC.toggleVisiblityForLoading(isLoading: false)
                                 topVC.setAllMarkers()
                             }
                         }

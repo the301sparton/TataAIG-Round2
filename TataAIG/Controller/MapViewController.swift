@@ -12,6 +12,14 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapHolder: UIView!
     
     @IBOutlet weak var bottomDetailView: UIView!
+    
+    @IBOutlet weak var mapCenterLabel: UILabel!
+    
+    @IBOutlet weak var mapCenterCoordinateLabel: UILabel!
+    
+    @IBOutlet weak var numVehiclesFoundLabel: UILabel!
+    
+    
     var vehicleArray : VehicleArray? = nil
     var selectedVehicle : Vehicle? = nil
     var mapView : GMSMapView? = nil
@@ -61,8 +69,8 @@ extension MapViewController : GMSMapViewDelegate {
 
           if let result = response?.firstResult() {
             let mapCenter = cameraPosition.target
-            print(result)
-            print(mapCenter)
+            self.mapCenterLabel.text = "Map Center : " + (result.lines?[0])!
+            self.mapCenterCoordinateLabel.text = "( lat : \(mapCenter.latitude) lon :  \(mapCenter.longitude) )"
           }
         }
       }
